@@ -247,16 +247,16 @@ body {
   width: 100%; }
 
 .zoom-large.view-2D .scale-stretched #solar-system {
-  font-size: 26%; }
+  font-size: 15%; }
 
 .zoom-large.view-3D .scale-stretched #solar-system {
   font-size: 62%; }
 
 .zoom-large.view-2D .scale-d #solar-system {
-  font-size: 22%; }
+  font-size: 10%; }
 
 .zoom-large.view-3D .scale-d #solar-system {
-  font-size: 48%; }
+  font-size: 32%; }
 
 .zoom-large.view-2D .scale-s #solar-system {
   font-size: 7%; }
@@ -1484,3 +1484,168 @@ body {
 @media screen and (min-width: 1600px) {
   .zoom-close .scale-d #solar-system {
     margin-left: -120%; } }
+/* ============================================================
+   CUSTOM DISTANCE MODE
+   Keeps the complete Sun → Neptune system visible
+   while making orbital distances noticeably larger.
+   ============================================================ */
+
+@media screen {
+
+  /* Keep the entire solar system centered */
+  #universe.scale-d #solar-system {
+    transform-origin: center center;
+  }
+
+  /* ------------------------------------------------------------
+     DISTANCE MODE — ORBIT SIZES
+     These are intentionally smaller than the original
+     astronomical distance scale so Neptune remains visible.
+     ------------------------------------------------------------ */
+
+  .scale-d #mercury.orbit {
+    width: 38em;
+    height: 38em;
+    margin-top: -19em;
+    margin-left: -19em;
+  }
+
+  .scale-d #venus.orbit {
+    width: 47em;
+    height: 47em;
+    margin-top: -23.5em;
+    margin-left: -23.5em;
+  }
+
+  .scale-d #earth.orbit {
+    width: 57em;
+    height: 57em;
+    margin-top: -28.5em;
+    margin-left: -28.5em;
+  }
+
+  .scale-d #mars.orbit {
+    width: 69em;
+    height: 69em;
+    margin-top: -34.5em;
+    margin-left: -34.5em;
+  }
+
+  .scale-d #jupiter.orbit {
+    width: 96em;
+    height: 96em;
+    margin-top: -48em;
+    margin-left: -48em;
+  }
+
+  .scale-d #saturn.orbit {
+    width: 128em;
+    height: 128em;
+    margin-top: -64em;
+    margin-left: -64em;
+  }
+
+  .scale-d #uranus.orbit {
+    width: 170em;
+    height: 170em;
+    margin-top: -85em;
+    margin-left: -85em;
+  }
+
+  .scale-d #neptune.orbit {
+    width: 210em;
+    height: 210em;
+    margin-top: -105em;
+    margin-left: -105em;
+  }
+
+
+  /* ------------------------------------------------------------
+     MAKE PLANETS SMALLER IN DISTANCE MODE
+     This gives the impression of much greater distance without
+     making the outer planets disappear from the screen.
+     ------------------------------------------------------------ */
+
+  .scale-d #sun {
+    font-size: 30em;
+  }
+
+  .scale-d #mercury .planet {
+    font-size: 0.8em;
+  }
+
+  .scale-d #venus .planet {
+    font-size: 1.3em;
+  }
+
+  .scale-d #earth .planet {
+    font-size: 1.5em;
+  }
+
+  .scale-d #mars .planet {
+    font-size: 1.15em;
+  }
+
+  .scale-d #jupiter .planet {
+    font-size: 3.2em;
+  }
+
+  .scale-d #saturn .planet {
+    font-size: 2.8em;
+  }
+
+  .scale-d #uranus .planet {
+    font-size: 1.6em;
+  }
+
+  .scale-d #neptune .planet {
+    font-size: 1.55em;
+  }
+/* ============================================================
+   DISTANCE MODE — KEEP SYSTEM CENTERED
+   ============================================================ */
+
+.scale-d #galaxy {
+    transform: scale(0.68);
+    transform-origin: center center;
+}
+
+/* Responsive scaling */
+@media (max-width: 1200px) {
+    .scale-d #galaxy {
+        transform: scale(0.60);
+        transform-origin: center center;
+    }
+}
+
+@media (max-width: 900px) {
+    .scale-d #galaxy {
+        transform: scale(0.52);
+        transform-origin: center center;
+    }
+}
+
+@media (max-width: 600px) {
+    .scale-d #galaxy {
+        transform: scale(0.42);
+        transform-origin: center center;
+    }
+}
+/* =========================================
+   SOLAR SYSTEM VIEW — SLIGHT ZOOM
+   ========================================= */
+
+#universe {
+    overflow: hidden;
+}
+
+/* Bring the solar system slightly closer */
+#galaxy {
+    transform: scale(1.);
+    transform-origin: center left;
+}
+
+/* Keep the solar system visually centered */
+#solar-system {
+    transform-origin: center center;
+}}
